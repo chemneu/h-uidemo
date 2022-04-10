@@ -1,0 +1,14 @@
+<div class="bar">
+  <div class="barItem">
+    <img [src]="'assets/icons/' + icon.icon + '.png'">
+  </div>
+  <div class="barItem" style="padding: 5px">
+    {{icon.name}}
+  </div>
+
+  <div class="actions">
+    <img src="assets/img/window-minimize-solid.svg" (click)="windowMinimize.emit()">
+    <img src="assets/img/window-maximize-solid.svg" (click)="windowMaximize.emit()">
+    <img src="assets/img/rectangle-xmark-solid.svg" (click)="windowClose.emit()">
+  </div>
+</div>

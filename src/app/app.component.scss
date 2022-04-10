@@ -1,0 +1,96 @@
+.desktop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.desktop_content {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 50px;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.desktop_icon {
+  position: fixed;
+}
+
+.taskbar {
+  position: fixed;
+  background-color: darkgrey;
+  width: 100%;
+  bottom: 0px;
+  height: 50px;
+}
+
+.taskbar div {
+  display: inline-block;
+  height: 46px;
+  margin: 2px;
+  text-align: center;
+}
+
+.time {
+  line-height: 23px;
+}
+
+.language {
+  line-height: 46px;
+}
+
+.right {
+  float: right;
+}
+
+.homeMenu {
+  z-index: 20;
+  position: fixed;
+  width: 300px;
+  bottom: 50px;
+  background-color: lightgrey;
+}
+
+.homeMenuItem {
+  height: 20px;
+  text-align: left;
+  border: 1px gray solid;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.homeMenuItem:hover {
+  background-color: gray;
+}
+
+.appwindow{
+  position: fixed;
+}
+
+.applications{
+  padding-left: 30px;
+}
+
+.application_tab{
+  display: inline-block;
+  height: 46px;
+  width: 60px;
+  line-height: 46px;
+  margin: 2px;
+  background-color: gray;
+}
+
+.application_tab:hover{
+  background-color: dimgrey;
+}
+
+.application_tab img{
+  height: 20px;
+  padding: 13px;
+}

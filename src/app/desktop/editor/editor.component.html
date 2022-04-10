@@ -1,0 +1,8 @@
+<div class="appWindowWrapper">
+  <app-window-header
+    [icon]="window.icon"
+    (windowClose)="windowClose.emit()"
+    (windowMinimize)="windowMinimize.emit()"
+    (windowMaximize)="windowMaximize.emit()"
+  ></app-window-header>
+</div>
