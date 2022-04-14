@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get('assets/products/products.csv', {responseType: 'text'})
+    this.http.get('./assets/products/products.csv', {responseType: 'text'})
       .subscribe(
         data => {
           const rows = data.split('\r\n');

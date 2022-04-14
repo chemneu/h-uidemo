@@ -518,7 +518,7 @@ let ProductsComponent = /*@__PURE__*/ (() => {
             this.products = [];
         }
         ngOnInit() {
-            this.http.get('assets/products/products.csv', { responseType: 'text' })
+            this.http.get('./assets/products/products.csv', { responseType: 'text' })
                 .subscribe(data => {
                 const rows = data.split('\r\n');
                 for (let i = 0; i < rows.length; i++) {
@@ -1223,7 +1223,7 @@ let GameEngine = /*@__PURE__*/ (() => {
             this.http = http;
             this.messageProbability = 50; // Wahrscheinlichkeit, das eine Message innerhalb von 10 Sekunden auftaucht
             this.possibleEvents = [];
-            this.http.get('assets/event/event.csv', { responseType: 'text' })
+            this.http.get('./assets/event/event.csv', { responseType: 'text' })
                 .subscribe(data => {
                 const rows = data.split('\r\n');
                 for (let i = 0; i < rows.length; i++) {

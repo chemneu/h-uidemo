@@ -15,7 +15,7 @@ export class GameEngine {
   private possibleEvents: PagelEvent[] = [];
 
   constructor(private readonly http: HttpClient) {
-    this.http.get('assets/event/event.csv', {responseType: 'text'})
+    this.http.get('./assets/event/event.csv', {responseType: 'text'})
       .subscribe(
         data => {
           const rows = data.split('\r\n');
