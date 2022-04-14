@@ -32,7 +32,13 @@ export class ProductsComponent implements OnInit {
     this.http.get('./assets/products/products.csv', {responseType: 'text'})
       .subscribe(
         data => {
-          const rows = data.split('\r\n');
+          let rows = data.split('\r\n');
+          if (rows.length === 1) {
+            rows = data.split('\n');
+          }
+          if (rows.length === 1) {
+            rows = data.split('\r');
+          }
           for (let i = 0; i < rows.length; i++) {
             const line = rows[i].split(';');
             if (line.length === 3) {
