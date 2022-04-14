@@ -4,6 +4,8 @@ import {Size} from './data/size';
 import {Position} from './data/position';
 import {Application} from './data/application';
 import {AppWindow} from './data/appWindow';
+import {GameEngine} from './game-engine';
+import {PagelEvent} from './data/pagel-event';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +19,7 @@ export class AppComponent implements OnInit {
   private standardIconHeight = 80;
 
   private standardWindowWidth = 600;
-  private standardWindowHeight = 400;
+  private standardWindowHeight = 540;
 
   icons: Icon[] = [];
   appWindows: AppWindow[] = [];
@@ -25,7 +27,7 @@ export class AppComponent implements OnInit {
 
   homeOpen = false;
 
-  constructor() {
+  constructor(private engine: GameEngine) {
   }
 
   ngOnInit(): void {
@@ -34,6 +36,7 @@ export class AppComponent implements OnInit {
     this.icons.push(new Icon(new Position(0, 100), this.getIconStandardSize(), 'chat', 'Chat', Application.chat));
     this.icons.push(new Icon(new Position(0, 200), this.getIconStandardSize(), 'editor', 'Editor', Application.editor));
     this.icons.push(new Icon(new Position(0, 300), this.getIconStandardSize(), 'explorer', 'Bibliothek', Application.explorer));
+    this.icons.push(new Icon(new Position(0, 400), this.getIconStandardSize(), 'products', 'Bibliothek', Application.products));
   }
 
   private getIconStandardSize(): Size {
@@ -132,6 +135,9 @@ export class AppComponent implements OnInit {
     return 'dd.MM.yyyy';
   }
 
+  getNewEvent(): PagelEvent {
+    return this.engine.getNewEvent();
+  }
 }
 
 

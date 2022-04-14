@@ -1,5 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AppWindow} from '../../data/appWindow';
+import {GameEngine} from '../../game-engine';
+import {PagelEventType} from '../../data/pagel-event-type';
+import {PagelEvent} from '../../data/pagel-event';
 
 @Component({
   selector: 'app-chat',
@@ -7,6 +10,13 @@ import {AppWindow} from '../../data/appWindow';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+
+  selectedSender = -1;
+
+  response = '';
+  responses: string[] = [];
+
+  readItems = [];
 
   @Input()
   public window: AppWindow;
@@ -20,9 +30,26 @@ export class ChatComponent implements OnInit {
   @Output()
   public windowClose = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private engine: GameEngine) {
+  }
 
   ngOnInit(): void {
   }
 
+  getEvents(): PagelEvent[] {
+    return this.engine.getByEventType(PagelEventType.Chat);
+  }
+
+
+  getVisibleText(): string {
+    if (this.selectedSender < 0) {
+      return '';
+    }
+    return this.getEvents()[this.selectedSender].message;
+  }
+
+  send(): void {
+    this.responses.push(this.response);
+    this.response = '';
+  }
 }

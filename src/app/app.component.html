@@ -79,6 +79,22 @@
       cdkDragBoundary=".desktop_content" cdkDrag>
     </app-mail>
 
+    <app-products
+      *ngIf="getApplicationWindow(Application.products) && getApplicationWindow(Application.products).zIndex > 0"
+
+      [style.width.px]="getApplicationWindowWidth(Application.products)"
+      [style.height.px]="getApplicationWindowHeight(Application.products)"
+      [style.z-index]="getApplicationWindowZIndex(Application.products)"
+
+
+      [window]="getApplicationWindow(Application.products)"
+      (windowClose)="stopApplication(Application.products)"
+      (windowMaximize)="maximizeApplication(Application.products)"
+      (windowMinimize)="minimizeApplication(Application.products)"
+      class="appwindow"
+      cdkDragBoundary=".desktop_content" cdkDrag>
+    </app-products>
+
   </section>
 
 
@@ -86,6 +102,12 @@
     <div class="homeMenuItem">Explorer</div>
     <div class="homeMenuItem">Systemsteuerung</div>
     <div class="homeMenuItem">Shutdown</div>
+  </section>
+
+  <section class="events">
+    <div class="eventInfo" *ngIf="getNewEvent()">
+      A new {{getNewEvent().eventType}} message appeared!
+    </div>
   </section>
 
   <section class="taskbar">

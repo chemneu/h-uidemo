@@ -5,4 +5,31 @@
     (windowMinimize)="windowMinimize.emit()"
     (windowMaximize)="windowMaximize.emit()"
   ></app-window-header>
+
+  <div class="senders">
+    <div *ngFor="let e of getEvents(); let i = index" (click)="selectedSender = i; responses = []; readItems.push(i)"
+         class="sender">
+      {{e.sender}}
+      <div *ngIf="readItems.indexOf(i) < 0" class="unread">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <div *ngIf="selectedSender > 0" class="senderbubble">
+      {{getVisibleText()}}
+    </div>
+
+    <div *ngFor="let a of responses" class="answerbubble">
+      {{a}}
+    </div>
+
+    <div class="answer">
+      <input type="text" [(ngModel)]="response">
+      <div class="button" (click)="send()">
+        send
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,50 @@
+.senders{
+  display: inline-block;
+  width: 200px;
+  height: calc(100% - 80px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.sender{
+  background-color: white;
+  border: 1px solid #ccc;
+  height: 30px;
+  width: 100%;
+}
+
+.message{
+  display: inline-block;
+  width: calc(100% - 210px);
+  height: calc(100% - 80px);
+  overflow-y: scroll;
+  position: relative;
+}
+
+.answerBar{
+  position: relative;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.answerBarItem{
+  margin: 5px;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  background-color: deepskyblue;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+.unread{
+  margin: 2px;
+  float: right;
+  width: 1px;
+  height: 1px;
+  border: 3px solid deepskyblue;
+  border-radius: 5px;
+}

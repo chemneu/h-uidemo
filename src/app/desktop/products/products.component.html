@@ -1,0 +1,23 @@
+<div class="appWindowWrapper">
+  <app-window-header
+    [icon]="window.icon"
+    (windowClose)="windowClose.emit()"
+    (windowMinimize)="windowMinimize.emit()"
+    (windowMaximize)="windowMaximize.emit()"
+  ></app-window-header>
+
+  <div>
+    <h2>Products</h2>
+    <table>
+      <tr *ngFor="let p of products">
+        <td>
+          <div class="productImg">
+            <img src="assets/products/{{p.image}}">
+          </div>
+        </td>
+        <td>{{p.title}}</td>
+        <td>{{p.description}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

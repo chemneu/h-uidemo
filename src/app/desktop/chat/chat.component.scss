@@ -1,1 +1,66 @@
+.senders{
+  display: inline-block;
+  width: 200px;
+  height: calc(100% - 80px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 
+.sender{
+  background-color: white;
+  border: 1px solid #ccc;
+  height: 30px;
+  width: 100%;
+}
+
+.message{
+  display: inline-block;
+  width: calc(100% - 210px);
+  height: calc(100% - 80px);
+  overflow-y: scroll;
+  position: relative;
+}
+
+.answer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.answer input{
+  float: left;
+  width: 80%;
+  padding: 10px;
+}
+
+.button{
+  background-color: deepskyblue;
+  color: white;
+  float: right;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.senderbubble{
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: lightblue;
+}
+
+.answerbubble{
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: right;
+  background-color: lightgreen;
+}
+
+.unread{
+  margin: 2px;
+  float: right;
+  width: 1px;
+  height: 1px;
+  border: 3px solid deepskyblue;
+  border-radius: 5px;
+}

@@ -5,4 +5,32 @@
     (windowMinimize)="windowMinimize.emit()"
     (windowMaximize)="windowMaximize.emit()"
   ></app-window-header>
+
+  <div class="senders">
+    <div *ngFor="let e of getEvents(); let i = index" (click)="selectedSender = i; readItems.push(i)"
+         class="sender">
+      {{e.sender}}
+      <div *ngIf="readItems.indexOf(i) < 0" class="unread">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="message">
+    <div class="answerBar">
+      <div class="answerBarItem">
+        Answer
+      </div>
+      <div class="answerBarItem">
+        Forward
+      </div>
+      <div class="answerBarItem">
+        Mark as Spam
+      </div>
+    </div>
+    <div *ngIf="selectedSender > 0">
+      {{getVisibleText()}}
+    </div>
+  </div>
 </div>
+

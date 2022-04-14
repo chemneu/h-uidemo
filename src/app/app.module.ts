@@ -10,6 +10,10 @@ import { WindowHeaderComponent } from './desktop/window-header/window-header.com
 import { ExplorerComponent } from './desktop/explorer/explorer.component';
 import { MailComponent } from './desktop/mail/mail.component';
 import { EditorComponent } from './desktop/editor/editor.component';
+import { ProductsComponent } from './desktop/products/products.component';
+import {HttpClientModule} from '@angular/common/http';
+import {GameEngine} from './game-engine';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,14 +23,19 @@ import { EditorComponent } from './desktop/editor/editor.component';
     WindowHeaderComponent,
     ExplorerComponent,
     MailComponent,
-    EditorComponent
+    EditorComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     AppRoutingModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [
+    GameEngine
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
