@@ -135,7 +135,7 @@ export class AppComponent implements OnInit {
     return 'dd.MM.yyyy';
   }
 
-  getNewEvent(): PagelEvent {
+  public getNewEvent(): PagelEvent {
     return this.engine.getNewEvent();
   }
 }

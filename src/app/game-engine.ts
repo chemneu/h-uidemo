@@ -56,7 +56,7 @@ export class GameEngine {
     return GameEngine.thrownEvents.filter(e => e.eventType === type);
   }
 
-  getNewEvent(): PagelEvent {
+  public getNewEvent(): PagelEvent {
     if (GameEngine.newEvent && GameEngine.newEvent.creationDate.getTime() > (new Date().getTime() - 1000)) {
       return GameEngine.newEvent;
     } else {

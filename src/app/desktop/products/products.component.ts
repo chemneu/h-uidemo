@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
   @Output()
   public windowClose = new EventEmitter<void>();
 
-  products: Product[] = [];
+  public products: Product[] = [];
 
   constructor(private http: HttpClient) {
 

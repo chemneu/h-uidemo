@@ -11,9 +11,9 @@ import {PagelEventType} from '../../data/pagel-event-type';
 })
 export class MailComponent implements OnInit {
 
-  selectedSender = -1;
+  public selectedSender = -1;
 
-  readItems = [];
+  public readItems = [];
 
   @Input()
   public window: AppWindow;
@@ -38,7 +38,7 @@ export class MailComponent implements OnInit {
   }
 
 
-  getVisibleText(): string {
+  public getVisibleText(): string {
     if (this.selectedSender < 0) {
       return '';
     }

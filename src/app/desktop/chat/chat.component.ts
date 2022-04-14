@@ -11,12 +11,12 @@ import {PagelEvent} from '../../data/pagel-event';
 })
 export class ChatComponent implements OnInit {
 
-  selectedSender = -1;
+  public selectedSender = -1;
 
-  response = '';
-  responses: string[] = [];
+  public response = '';
+  public responses: string[] = [];
 
-  readItems = [];
+  public readItems = [];
 
   @Input()
   public window: AppWindow;
@@ -36,19 +36,19 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getEvents(): PagelEvent[] {
+  public getEvents(): PagelEvent[] {
     return this.engine.getByEventType(PagelEventType.Chat);
   }
 
 
-  getVisibleText(): string {
+  public getVisibleText(): string {
     if (this.selectedSender < 0) {
       return '';
     }
     return this.getEvents()[this.selectedSender].message;
   }
 
-  send(): void {
+  public send(): void {
     this.responses.push(this.response);
     this.response = '';
   }
